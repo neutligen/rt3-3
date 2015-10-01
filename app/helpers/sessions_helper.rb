@@ -5,7 +5,7 @@ module SessionsHelper
     session[:user_id] = user.id
   end
   
-  # ユーザを永続的セッションに記憶する
+  # ユーザを永続的セッションに記憶する（ユーザのcookiesにtokenを渡す）
   def remember(user)
     user.remember
     cookies.permanent.signed[:user_id] = user.id

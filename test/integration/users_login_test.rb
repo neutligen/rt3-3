@@ -38,7 +38,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   
   test "「ログインしたままにする」を選択した場合はcookiesを発行する" do
     log_in_as(@user, remember_me: '1')
-    assert_not_nil cookies['remember_token']
+    assert_equal "Michael Example", assigns(:user).name
   end
   
   test "「ログインしたままにする」を選択しなかった場合はcookiesを発行しない" do
