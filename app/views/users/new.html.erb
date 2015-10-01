@@ -10,13 +10,13 @@
     <%= f.text_field :name, class: 'form-control'%>
     
     <%= f.label :email, "メールアドレス" %>
-    <%= f.text_field :email, class: 'form-control' %>
+    <%= f.email_field :email, class: 'form-control' %>
     
     <%= f.label :password,"パスワード" %>
-    <%= f.text_field :password, class: 'form-control' %>
+    <%= f.password_field :password, class: 'form-control' %>
     
     <%= f.label :password_confirmation, "パスワード確認（再入力）" %>
-    <%= f.text_field :password_confirmation, class: 'form-control' %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
     
     <%= f.submit"登録", class: "btn btn-primary" %>
     <% end %>
