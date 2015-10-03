@@ -1,0 +1,13 @@
+<%= render 'shared/error_messages' %>
+    
+    <%= f.label :name, "お名前" %>
+    <%= f.text_field :name, class: 'form-control' %>
+    
+    <%= f.label :email, "メールアドレス" %>
+    <%= f.email_field :email, class: 'form-control' %>
+    
+    <%= f.label :password, "パスワード" %>
+    <%= f.password_field :password, class: 'form-control' %>
+    
+    <%= f.label :password_confirmation, "パスワード確認（再入力）" %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>

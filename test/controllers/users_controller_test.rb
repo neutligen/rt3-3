@@ -57,4 +57,11 @@ class UsersControllerTest < ActionController::TestCase
     end
     assert_redirected_to root_url
   end
+  
+  test "Web経由で管理者権限を操作できない" do
+    log_in_as(@other_user)
+    assert_not @other_user.admin?
+    patch :update, id: @other_user, user:{ password: @other_user.password, password_confirmation: @other_user.password, admin: true }
+    assert_not @other_user.reload.admin?
+  end
 end

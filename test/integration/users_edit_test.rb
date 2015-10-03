@@ -26,6 +26,9 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     @user.reload
     assert_equal name, @user.name
     assert_equal email, @user.email
+    delete logout_path
+    log_in_as(@user)
+    assert_redirected_to @user
   end
   
 end
