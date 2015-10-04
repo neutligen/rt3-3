@@ -50,7 +50,7 @@ class UsersControllerTest < ActionController::TestCase
     assert_redirected_to login_url
   end
   
-  test "管理者以外のユーザー削除処理不可" do
+  test "管理者以外のユーザーは削除処理不可" do
     log_in_as(@other_user)
     assert_no_difference 'User.count' do
       delete :destroy, id: @user
