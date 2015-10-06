@@ -64,6 +64,6 @@ class UserTest < ActiveSupport::TestCase
   end
   
   test "別ブラウザでログアウトした場合（remember_digestがnil）、 remember_tokenでログインできない（authenticated?メソッドがfalseを返す）" do
-    assert_not @user.authenticated?('')
+    assert_not @user.authenticated?(:remember, '')
   end
 end
