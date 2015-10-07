@@ -1,9 +1,9 @@
-<h1>テストアプリケーション</h1>
+<h1>TEST App</h1>
 
-<p><%= @user.name %>様</p>
+<p>Hi <%= @user.name %>,</p>
 
 <p>
-Welcome to the Sample App!Click on the link below to activate your account:
+Welcome to the TEST App!Click on the link below to activate your account:
 </p>
 
 <%= link_to "Activate", edit_account_activation_url(@user.activation_token,
