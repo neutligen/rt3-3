@@ -27,3 +27,6 @@ doc/
 .DS_Store
 .idea
 .secret
+
+# Ignore uploaded test images.
+/public/uploads

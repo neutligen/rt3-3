@@ -1,12 +1,12 @@
-<% if @user.errors.any? %>
-<div id="error_explanation">
-  <div class="alert alert-danger">
-    <%= @user.errors.count %>　個のエラーが発生しました。
-  </div>
-  <ul>
-    <%= @user.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
+<% if object.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      <%= object.errors.count %>個のエラーが見つかりました.
+    </div>
+    <ul>
+    <% object.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
     <% end %>
-  </ul>
-</div>
+    </ul>
+  </div>
 <% end %>

@@ -66,4 +66,13 @@ class UserTest < ActiveSupport::TestCase
   test "別ブラウザでログアウトした場合（remember_digestがnil）、 remember_tokenでログインできない（authenticated?メソッドがfalseを返す）" do
     assert_not @user.authenticated?(:remember, '')
   end
+  
+  test "投稿者が削除されたらその投稿者のマイクロポストも削除される。" do
+    @user.save
+    @user.microposts.create!(content: "Lorem ipsum")
+    assert_difference 'Micropost.count', -1 do
+      @user.destroy
+    end
+  end
+
 end
